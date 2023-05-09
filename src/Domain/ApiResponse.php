@@ -1,6 +1,6 @@
 <?php
 
-namespace ClearCutCoding\PhpApiTools\Domain\Api;
+namespace ClearCutCoding\PhpApiTools\Domain;
 
 class ApiResponse
 {

@@ -1,18 +1,14 @@
 <?php
 
-namespace ClearCutCoding\PhpApiTools\Service\Api;
+namespace ClearCutCoding\PhpApiTools\Service;
 
-use ClearCutCoding\PhpApiTools\Domain\Api\ApiRequest;
-use ClearCutCoding\PhpApiTools\Domain\Api\ApiResponse;
+use ClearCutCoding\PhpApiTools\Domain\ApiRequest;
+use ClearCutCoding\PhpApiTools\Domain\ApiResponse;
 use ClearCutCoding\PhpApiTools\Exception\ApiException;
 use ClearCutCoding\PhpApiTools\Exception\ApiRedirectException;
 
 class ApiService
 {
-    public function __construct()
-    {
-    }
-
     /**
      * @throws ApiException
      *
