@@ -1,0 +1,26 @@
+{
+    "name": "clearcutcoding/php-api-tools",
+    "description": "PHP Library for handling API requests/responses",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "ClearCutCoding\\PhpApiTools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Etch",
+            "email": "etch@clearcutcoding.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0",
+        "ext-curl": "*"
+    },
+    "config": {
+        "platform": {
+            "php": "8.0"
+        }
+    }
+}
