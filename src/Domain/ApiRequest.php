@@ -16,8 +16,8 @@ class ApiRequest
      * @param array $headers Must be in format:
      *
      * [
-     *   "headername: headervalue",
-     *   "headername: headervalue",
+     *   'headername' => 'headervalue',
+     *   'headername' => 'headervalue',
      * ]
      */
     public function addHeaders(array $headers): void
