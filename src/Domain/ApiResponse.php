@@ -48,8 +48,9 @@ class ApiResponse
         }
 
         foreach ($headers as $header) {
-            preg_match_all('/^([^;]*)/mi', $header, $matchFound);
+            preg_match_all('/^([^;]*)/mi', (string) $header, $matchFound);
 
+            /** @var string $item */
             foreach ($matchFound[1] as $item) {
                 parse_str($item, $cookie);
                 $cookies = array_merge($cookies, $cookie);

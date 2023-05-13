@@ -28,12 +28,11 @@ class ApiRequest
     }
 
     /**
-     * @param mixed $value
-     * @param bool  $replace
-     *                       - true  => if header name already exists, override it
-     *                       - false => if header name already exists, keep it and ignore request
+     * @param bool $replace
+     *                      - true  => if header name already exists, override it
+     *                      - false => if header name already exists, keep it and ignore request
      */
-    public function addHeader(string $name, $value, bool $replace = false): void
+    public function addHeader(string $name, mixed $value, bool $replace = false): void
     {
         if ($replace) {
             $this->removeHeader($name);
@@ -76,7 +75,7 @@ class ApiRequest
     public function explodeHeaderString(string $header): array
     {
         if (stripos($header, ':') !== false) {
-            list($headername, $headervalue) = explode(':', $header, 2);
+            [$headername, $headervalue] = explode(':', $header, 2);
 
             return [strtolower($headername) => $headervalue];
         }

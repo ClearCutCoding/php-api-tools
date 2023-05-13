@@ -21,7 +21,7 @@ class ApiService
         }
 
         $body = (is_array($request->body) && !($options['opt_form-data'] ?? false))
-            ? json_encode($request->body)
+            ? json_encode($request->body, JSON_THROW_ON_ERROR)
             : $request->body;
         $this->decorateRequestHeaders($request, $body, $options);
 
@@ -44,10 +44,7 @@ class ApiService
         curl_setopt(
             $ch,
             CURLOPT_HEADERFUNCTION,
-            /**
-             * @param mixed $curl
-             */
-            function ($curl, string $header) use (&$responseHeaders) {
+            function (mixed $curl, string $header) use (&$responseHeaders) {
                 $len = strlen($header);
                 $header = explode(':', $header, 2);
                 if (count($header) < 2) { // ignore invalid headers
@@ -72,7 +69,7 @@ class ApiService
                 'url' => curl_getinfo($ch, CURLINFO_REDIRECT_URL),
             ];
             curl_close($ch);
-            throw new ApiRedirectException(json_encode($msg));
+            throw new ApiRedirectException(json_encode($msg, JSON_THROW_ON_ERROR));
         }
 
         if (!in_array($httpCode, [200, 201, 202, 203, 204, 205, 206])) {

@@ -1,0 +1,11 @@
+vendor-root: ./vendor-alt/cli/
+run:
+  rector: true
+  phpcsfixer: true
+  lintyaml: false
+  linttwig: false
+  phpcs: true
+  phpunit: false
+  phpmd: true
+  phpstan: true
+  psalm: true
