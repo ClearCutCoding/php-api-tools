@@ -1,5 +1,4 @@
-ci-runner.config.yaml
-/vendor/
+vendor/
 
 # IDEs and editors
 .idea
@@ -9,8 +8,6 @@ ci-runner.config.yaml
 *.launch
 .settings/
 *.sublime-workspace
-
-# IDE - VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -33,3 +30,7 @@ Thumbs.db
 ###> squizlabs/php_codesniffer ###
 /.phpcs-cache
 ###< squizlabs/php_codesniffer ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###

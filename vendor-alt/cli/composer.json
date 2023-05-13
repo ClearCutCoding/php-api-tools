@@ -1,0 +1,5 @@
+{
+    "require-dev": {
+        "clearcutcoding/symfony-ci-runner": "^2.1"
+    }
+}
